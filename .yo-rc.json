@@ -1,9 +1,9 @@
 {
-  "generator-node": {
-    "promptValues": {
-      "authorName": "weiweiShen",
-      "authorEmail": "shenweiwei9@163.com",
-      "authorUrl": "index.html"
+    "generator-node": {
+        "promptValues": {
+            "authorName": "weiweiShen",
+            "authorEmail": "weiwei_shen.sgmext@saic-gm.com",
+            "authorUrl": "index.html"
+        }
     }
-  }
 }
