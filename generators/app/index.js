@@ -24,8 +24,7 @@ module.exports = class extends Generator {
             choices: [
                 'Angular',
                 'Vue',
-                'Flutter',
-                'React'
+                'Flutter'
             ],
             store: true
         };
