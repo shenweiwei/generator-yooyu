@@ -4,55 +4,9 @@ const chalk = require('chalk');
 const yosay = require('yosay');
 const path = require('path');
 const mkdirp = require('mkdirp');
+const prompList = require('./js/promp-list');
 
 module.exports = class extends Generator {
-
-    initPrompList() {
-        const project = {
-            type: 'input',
-            name: 'appname',
-            message: 'input your project name',
-            default: this.appname,
-            store: true
-        };
-
-        const framework = {
-            type: 'list',
-            name: 'framework',
-            message: 'select your frontend framework',
-            default: 'Vue',
-            choices: [
-                'Angular',
-                'Vue',
-                'Flutter'
-            ],
-            store: true
-        };
-
-        let ui_framework = {
-            type: 'list',
-            name: 'ui',
-            message: 'select your frontend ui framework',
-            choices: [],
-            when: function(answers) { // 当watch为true的时候才会提问当前问题
-                answers.watch = true;
-
-                if (answers.framework === 'Vue') {
-                    ui_framework.choices.push('Framework 7');
-                    ui_framework.choices.push('Element-ui');
-                } else if (answers.framework === 'Angular') {
-                    ui_framework.choices.push('OpenWMS');
-                } else {
-                    answers.watch = false;
-                }
-
-                return answers.watch
-            },
-            store: true
-        };
-
-        return [project, framework, ui_framework, ];
-    }
 
     prompting() {
         // Have Yeoman greet the user.
@@ -60,11 +14,31 @@ module.exports = class extends Generator {
             yosay(`Welcome to the cat\'s pajamas ${chalk.red('generator-yooyu')} generator!`)
         );
 
-        return this.prompt(this.initPrompList()).then((answers) => {
+        return this.prompt(prompList).then((answers) => {
             this.props = answers;
+
+            const packagejson = this.fs.readJSON(this.templatePath('public/package.json'));
+
+            packagejson["name"] = answers.appname;
+
+            if (answers.framework === 'Vue') {
+                packagejson.dependencies["vue"] = '^2.5.17';
+                packagejson.devDependencies["vue-loader"] = '^15.4.2';
+                packagejson.devDependencies["vue-style-loader"] = '^4.1.2';
+                packagejson.devDependencies["vue-template-compilerr"] = '^2.5.17';
+                packagejson.devDependencies["vue-loader"] = '^15.4.2';
+            }
+
+            if (answers.ui === 'Framework 7') {
+                packagejson.dependencies["framework7"] = '^3.5.2';
+                packagejson.dependencies["framework7-icons"] = '^2.0.5';
+                packagejson.dependencies["framework7-vue"] = '^2.3.0';
+                packagejson.dependencies["material-design-icons"] = '^3.0.1';
+            }
+
+            this.props.packagejson = packagejson;
         })
     }
-
 
     writing() {
         this.fs.copy(
@@ -105,6 +79,8 @@ module.exports = class extends Generator {
             this.templatePath('public/index.js'),
             this.destinationPath('js/index.js')
         );
+
+        this.fs.writeJSON('package.json', this.props.packagejson);
     };
 
 }

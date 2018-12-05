@@ -1,9 +1,16 @@
 {
-    "generator-node": {
-        "promptValues": {
-            "authorName": "weiweiShen",
-            "authorEmail": "weiwei_shen.sgmext@saic-gm.com",
-            "authorUrl": "index.html"
-        }
+  "generator-node": {
+    "promptValues": {
+      "authorName": "weiweiShen",
+      "authorEmail": "weiwei_shen.sgmext@saic-gm.com",
+      "authorUrl": "index.html"
     }
+  },
+  "generator-yooyu": {
+    "promptValues": {
+      "appname": "sww",
+      "framework": "Vue",
+      "ui": "Framework 7"
+    }
+  }
 }
