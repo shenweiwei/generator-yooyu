@@ -32,8 +32,11 @@ module.exports = class extends Generator {
             if (answers.ui === 'Framework 7') {
                 packagejson.dependencies["framework7"] = '^3.5.2';
                 packagejson.dependencies["framework7-icons"] = '^2.0.5';
-                packagejson.dependencies["framework7-vue"] = '^2.3.0';
                 packagejson.dependencies["material-design-icons"] = '^3.0.1';
+            }
+
+            if (answers.ui === 'Framework 7' && answers.framework === 'Vue') {
+                packagejson.dependencies["framework7-vue"] = '^2.3.0';
             }
 
             this.props.packagejson = packagejson;
