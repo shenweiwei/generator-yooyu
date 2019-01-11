@@ -43,4 +43,26 @@ module.exports = function(yo, mkdirp) {
         yo.templatePath('public/.babelrc'), //模板文件地址 
         yo.destinationPath('.babelrc'), //创建在根目录
     );
+
+    // webpack
+    yo.fs.copy(
+        yo.templatePath('public/webpack.config.dev.js'), //模板文件地址 
+        yo.destinationPath('config/webpack.config.dev.js'), //创建在根目录
+    );
+
+    yo.fs.copy(
+        yo.templatePath('public/webpack.config.qa.js'), //模板文件地址 
+        yo.destinationPath('config/webpack.config.test.js'), //创建在根目录
+    );
+
+    yo.fs.copy(
+        yo.templatePath('public/webpack.config.prod.js'), //模板文件地址 
+        yo.destinationPath('config/webpack.config.prod.js'), //创建在根目录
+    );
+
+    yo.fs.copy(
+        yo.templatePath('public/webpack.config.js'), //模板文件地址 
+        yo.destinationPath('config/webpack.config.js'), //创建在根目录
+    );
+
 };

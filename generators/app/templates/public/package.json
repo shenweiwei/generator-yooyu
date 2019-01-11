@@ -3,7 +3,8 @@
     "version": "2.0.0",
     "description": "Framework7 Vue Webpack starter app template",
     "scripts": {
-        "build": "webpack"
+        "build": "webpack --mode=development",
+        "build prod": "webpack --mode=production"
     },
     "repository": {
         "type": "git",
