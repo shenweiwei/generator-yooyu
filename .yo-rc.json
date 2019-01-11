@@ -8,7 +8,7 @@
   },
   "generator-yooyu": {
     "promptValues": {
-      "appname": "sww",
+      "appname": "sww-test",
       "framework": "Vue",
       "ui": "Framework 7"
     }

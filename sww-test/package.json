@@ -1,5 +1,5 @@
 {
-    "name": "framework7-template-vue-webpack",
+    "name": "sww-test",
     "version": "2.0.0",
     "description": "Framework7 Vue Webpack starter app template",
     "scripts": {
@@ -26,7 +26,12 @@
         "url": "https://github.com/framework7io/framework7-template-vue-webpack/issues"
     },
     "homepage": "http://framework7.io/vue/",
-    "dependencies": {},
+    "dependencies": {
+        "vue": "^2.5.17",
+        "framework7": "^3.5.2",
+        "framework7-icons": "^2.0.5",
+        "material-design-icons": "^3.0.1"
+    },
     "devDependencies": {
         "@babel/core": "^7.1.2",
         "@babel/plugin-syntax-dynamic-import": "^7.0.0",
@@ -35,8 +40,7 @@
         "@babel/preset-env": "^7.1.0",
         "autoprefixer": "^9.1.5",
         "babel-loader": "^8.0.4",
-        "babel-preset-es2015": "^7.0.0-beta.3",
-        "babel-preset-stage-3": "^7.0.0-beta.3",
+        "babel-preset-es2015": "^7.0.0",
         "chalk": "^2.4.1",
         "copy-webpack-plugin": "^4.5.2",
         "cpy-cli": "^2.0.0",
@@ -55,7 +59,12 @@
         "webpack": "^4.20.0",
         "webpack-bundle-analyzer": "^3.0.2",
         "webpack-cli": "^3.1.2",
-        "webpack-dev-server": "^3.1.9"
+        "webpack-dev-server": "^3.1.9",
+        "vue-loader": "^15.4.2",
+        "vue-style-loader": "^4.1.2",
+        "vue-template-compilerr": "^2.5.17",
+        "babel-helper-vue-jsx-merge-props": "^2.0.3",
+        "babel-plugin-transform-vue-jsx": "^4.0.1"
     },
     "engines": {
         "node": ">= 6.0.0",
