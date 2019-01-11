@@ -5,17 +5,17 @@ module.exports = function(yo, mkdirp) {
     // 创建src文件夹
     mkdirp('src');
 
+    mkdirp('config');
+
+    mkdirp('dist');
+
+    mkdirp('asserts');
+
     // 创建public文件夹
     mkdirp('src/public');
 
     // 创建app文件夹
     mkdirp('src/app');
-
-    // 创建config文件夹
-    mkdirp('src/config');
-
-    // 创建env文件夹
-    mkdirp('src/env');
 
     // index.html
     yo.fs.copy(
